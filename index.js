@@ -1,55 +1,50 @@
-// let homeCount = 0
-// let guestCount = 0
-
-// document.getElementById("home-count").textContent = homeCount
-
-// document.getElementById("guest-count").textContent = guestCount
-
-
-let homeCount = document.getElementById("home-count")
-
-homeCountScore = 0
-
-function add1(){
-    homeCountScore = homeCountScore + 1
-    homeCount.textContent = homeCountScore
-}
-
-
-function add2(){
-    homeCountScore = homeCountScore + 2
-    homeCount.textContent = homeCountScore
- }
-
-function add3(){
-    homeCountScore = homeCountScore + 3
-    homeCount.textContent = homeCountScore
-     }
-
-
-let guestCount = document.getElementById("guest-count")
-
+// assign variable scores to zero
+let homeCountScore = 0
 let guestCountScore = 0
 
-function addGuest1(){
-    guestCountScore = guestCountScore + 1
-    guestCount.textContent = guestCountScore
+// assign onclick to all the buttons via parent:child relation
+const container = document.querySelector(".container")
+
+// paragraph score tag
+let homeDisplay = document.getElementById("home-display")
+let guestDisplay = document.getElementById("guest-display")
+
+// add event listener to target, increment 1,2,3 in html using dataset
+// then run highlight function
+container.addEventListener('click', function(e){
+    const target = e.target
+    const homePts = target.dataset.homePts
+    const guestPts = target.dataset.guestPts
+
+    if (homePts){
+        homeCountScore += +homePts
+        homeDisplay.textContent = homeCountScore
+    }
+
+    if (guestPts){
+        guestCountScore += +guestPts
+        guestDisplay.textContent = guestCountScore
+    }
+
+    highlight()
+})
+
+// assign scoreboard variables so they can be accessed in multiple functions (add highlight/remove highlight)
+let homeScore = document.getElementById("home-score")
+let guestScore = document.getElementById("guest-score")
+
+function highlight(){
+    homeScore.classList.toggle("highlighter", homeCountScore > guestCountScore)
+    guestScore.classList.toggle("highlighter", guestCountScore > homeCountScore)
 }
 
-function addGuest2(){
-    guestCountScore = guestCountScore + 2
-    guestCount.textContent = guestCountScore
- }
-
-function addGuest3(){
-    guestCountScore = guestCountScore + 3
-    guestCount.textContent = guestCountScore
-     }
-
-
-     if (+homeCount > +guestCount) {
-        document.getElementById("home-count").style.backgroundColor = "#d7ff00";
-      } else if (+homeCount < +guestCount){
-      document.getElementById("guest-count").style.backgroundColor = "#d7ff00";
-      }
-
+// New Game, reset score and display
+const newGame = document.getElementById("newGame")
+newGame.addEventListener('click', function(){
+    homeCountScore = 0
+    guestCountScore = 0
+    homeDisplay.textContent = homeCountScore
+    guestDisplay.textContent = guestCountScore
+    homeScore.classList.remove("highlighter")
+    guestScore.classList.remove("highlighter")
+})

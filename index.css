@@ -7,26 +7,36 @@ body {
     margin-left: 400px;
 }
 
-.container {
-    display: flex;
-    width: 600px;
-    height: 300px;
-    justify-content: space-around;
-    background-color: cornflowerblue;
-    padding: 0 0 40px 0;
+section{
+    width: 700px;
+    height: 400px;
+    /* background-color: cornflowerblue; */
+    background: linear-gradient(217deg, rgb(91, 198, 255), rgba(255, 255, 255, 0) 100%),
+            linear-gradient(127deg, rgb(179, 241, 255), rgba(0,255,0,0) 90%),
+            linear-gradient(336deg, rgb(124, 36, 225), rgba(0,0,255,0) 90%);
+    padding: 0 0 20px 0;
     border: 6px solid white;
     border-radius: 10px;
-    margin: 2vw;
+    margin: 80px 0;
+    filter: drop-shadow(0 0 8px white);
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 40px 0;
 }
 
 h3{
     font-size: 40px;
     font-weight: 800;
-    margin-bottom: 8px;
-    /* letter-spacing: 2px; */
+    margin-bottom: 10px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: black;
 }
 
-#home-score{
+#home-score, #guest-score{
     display: flex;
     width: 200px;
     height: 150px;
@@ -35,33 +45,18 @@ h3{
     border-radius: 8px;
     justify-content: center;
     align-items: center;
+    margin-bottom: 18px;
 }
 
-#home-score p{
+#home-score p, #guest-score p{
     font-size: 80px;
     color: red;
-}
-
-#guest-score{
-    display: flex;
-    width: 200px;
-    height: 150px;
-    background-color: black;
-    border-radius: 8px;
-    border: 2px solid white;
-    justify-content: center;
-    align-items: center;
-
-}
-
-#guest-score p {
-    font-size: 80px;
-    color: red;
+    text-shadow: 0 0 8px rgba(255, 102, 102, 0.859);
 }
 
 #add-home, #add-guest{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 10px;
 }
 
@@ -69,9 +64,31 @@ button{
     padding: 8px 10px;
     color: cornflowerblue;
     background-color: black;
+    font-weight: 600;
+    border: 1px solid aliceblue;
     border-radius: 8px;
+    filter: drop-shadow(0 0 2px white);
 }
 
 button:hover{
     cursor: pointer;
+    filter: brightness(1.1);
+    filter: drop-shadow(0 0 2px white);
+}
+
+button:active{
+    filter: brightness(1.3);
+}
+
+.highlighter{
+    display: none;
+    box-shadow: 0 0 26px rgb(0, 55, 255);
+}
+
+#newGame{
+    color: rgb(189, 228, 255);
+}
+
+#newGame:active{
+    color: rgb(69, 111, 246);
 }

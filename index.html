@@ -3,30 +3,35 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
+        <section>
         <div class="container">
-            <div id="home-box">
+            <div>
                 <h3>HOME</h3>
                     <div id="home-score">
-                    <p id="home-count"></p>
+                    <p id="home-display">0</p>
                     </div>
                         <div id="add-home">
-                            <button onclick="add1()">+1</button>
-                            <button onclick="add2()">+2</button>
-                            <button onclick="add3()">+3</button>
+                            <button data-home-pts="1">+1</button>
+                            <button data-home-pts="2">+2</button>
+                            <button data-home-pts="3">+3</button>
                         </div>
             </div>
-            <div id="guest-box">
-                <h3>AWAYYYY</h3>
+            <div>
+                <h3>AWAY</h3>
                     <div id="guest-score">
-                        <p id="guest-count"></p>
+                        <p id="guest-display">0</p>
                     </div>
                     <div id="add-guest">
-                        <button onclick="addGuest1()">+1</button>
-                        <button onclick="addGuest2()">+2</button>
-                        <button onclick="addGuest3()">+3</button>
+                        <button data-guest-pts="1">+1</button>
+                        <button data-guest-pts="2">+2</button>
+                        <button data-guest-pts="3">+3</button>
                     </div>
             </div>
         </div>
+        <div>
+                <button id="newGame">New Game</button>
+            </div>
+    </section>
         <script src="index.js"></script>
     </body>
 </html>
