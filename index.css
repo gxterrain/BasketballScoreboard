@@ -9,12 +9,12 @@ section{
     margin-left: auto;
     margin-right: auto;
     margin-top: 80px;
-    width: 50vw;
+    width: 80vw;
     min-width: 500px;
     max-width: 750px;
-    height: 40vh;
+    height: 60vh;
     min-height: 400px;
-    max-height: 415px;
+    max-height: 410px;
     background: linear-gradient(217deg, rgb(91, 198, 255), rgba(255, 255, 255, 0) 100%),
             linear-gradient(127deg, rgb(179, 241, 255), rgba(0,255,0,0) 90%),
             linear-gradient(336deg, rgb(124, 36, 225), rgba(0,0,255,0) 90%);
